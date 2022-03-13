@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/apimongodb');
+mongoose.connect(process.env.MONGO_URL);
 
 var clientSchema = new mongoose.Schema({
     name: String,
