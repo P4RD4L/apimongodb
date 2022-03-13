@@ -8,7 +8,7 @@ router.get('/', function(req, res, next) {
 
 /* GET all client. */
 router.get('/client', function (req, res, next) {
-  var db = require('../db');
+  var db = require('mongodb').Db;
   var Client = db.Mongoose.model('client', db.ClientSchema, 'client');
   Client.find({}).lean().exec(function(e,docs){
      res.json(docs);
